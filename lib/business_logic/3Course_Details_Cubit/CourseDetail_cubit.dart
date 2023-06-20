@@ -25,13 +25,16 @@ class CourseDetailsCubit extends Cubit<CourseDetailsState> {
   Map<String, int> StudentInformation = {};
   void GetStudentInfo({required CourseModel courseModel}) {
     StudentInformation.clear();
-    if (courseModel.studentInf.isEmpty) {
+    if (courseModel.studentInf.length == 0) {
+      print("11111111111111");
       courseModel.studentList.forEach((element) {
         courseModel.studentInf.addAll({element: 0});
         // courseModel.studentInf = StudentInformation;
         courseModel.save();
       });
     } else if (courseModel.studentList.length > courseModel.studentInf.length) {
+      print("222222222");
+
       for (int x = courseModel.studentInf.length;
           x < courseModel.studentList.length;
           x++) {
@@ -39,6 +42,8 @@ class CourseDetailsCubit extends Cubit<CourseDetailsState> {
         courseModel.save();
       }
     } else if (courseModel.studentList.length < courseModel.studentInf.length) {
+      print("333333333333333");
+
       courseModel.studentInf.forEach((key, value) {
         if (courseModel.studentList.contains(key)) {
           StudentInformation.addAll({key: value});
@@ -66,7 +71,7 @@ class CourseDetailsCubit extends Cubit<CourseDetailsState> {
 
     ReasultOfOfficeRate =
         ((int.parse(courseModel.officeRate) * ReasultOFPayStudent) / 100);
-        
+
     ReasultOfTeacherRate =
         ((int.parse(courseModel.teacherRate) * ReasultOFPayStudent) / 100);
 

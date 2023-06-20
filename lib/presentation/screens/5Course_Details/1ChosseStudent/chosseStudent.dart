@@ -27,15 +27,15 @@ class ChooseStudent extends StatelessWidget {
               BlocProvider.of<CourseDetailsCubit>(context).RegisterStudent;
           return Column(
             children: [
-              const SizedBox(
-                height: 30,
-              ),
-              const Image(
-                image: AssetImage(
-                  ImageAssets.logo,
-                ),
-                width: 150,
-              ),
+              // const SizedBox(
+              //   height: 30,
+              // ),
+              // const Image(
+              //   image: AssetImage(
+              //     ImageAssets.logo,
+              //   ),
+              //   width: 150,
+              // ),
               Container(
                 height: 380,
                 color: kWhiteColor,
@@ -81,7 +81,7 @@ class ChooseStudent extends StatelessWidget {
                                   color: kBlackColor,
                                 ),
                               ),
-                              leading:const Icon(
+                              leading: const Icon(
                                 Icons.delete,
                                 color: kBlackColor,
                                 size: 30,
@@ -99,8 +99,15 @@ class ChooseStudent extends StatelessWidget {
               CustomAddStudentButton(
                 lengthStudent: StudentRegister.length,
                 onTap: () {
+                  print("studentInf" + Courses.studentInf.toString());
+                  print("studentList" + Courses.studentList.toString());
+
                   BlocProvider.of<CourseDetailsCubit>(context)
                       .GetStudentInfo(courseModel: Courses);
+                  print("________________________");
+                  print("studentInf" + Courses.studentInf.toString());
+                  print("studentList" + Courses.studentList.toString());
+
                   Navigator.pop(context);
                 },
               ),

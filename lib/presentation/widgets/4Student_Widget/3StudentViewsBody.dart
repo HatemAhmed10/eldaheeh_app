@@ -16,7 +16,6 @@ class StudentViewsBody extends StatefulWidget {
 }
 
 class _StudentViewsBodyState extends State<StudentViewsBody> {
-
   @override
   Widget build(BuildContext context) {
     return Padding(

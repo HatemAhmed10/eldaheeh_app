@@ -25,6 +25,7 @@ class CourseDetailsView extends StatelessWidget {
         onPressed: () {
           BlocProvider.of<CourseDetailsCubit>(context)
               .AddStudentToRegister(StudentName: "", courseModel: Courses);
+
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {

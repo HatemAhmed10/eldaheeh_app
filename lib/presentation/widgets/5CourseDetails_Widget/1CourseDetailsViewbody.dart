@@ -19,16 +19,16 @@ class CourseDetailsViewbody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 30,
-        ),
-        const Image(
-          image: AssetImage(ImageAssets.logo),
-          width: 150,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
+        // const SizedBox(
+        //   height: 30,
+        // ),
+        // const Image(
+        //   image: AssetImage(ImageAssets.logo),
+        //   width: 150,
+        // ),
+        // const SizedBox(
+        //   height: 10,
+        // ),
         Row(
           children: [
             Spacer(),
